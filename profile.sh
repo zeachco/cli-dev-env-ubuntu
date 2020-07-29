@@ -3,10 +3,10 @@
 _wrap () {
   alias $1="echo \" ~ $2\" && $2"
 }
- 
+
 alias gh="cat ~/scripts/gitaliases.sh"
 _wrap gba "git branch -a"
-_wrap gpaa "git add . --all && git commit --amend --no-edit && git push origin -f"
+_wrap gpaa "git add . --all && git commit --amend --no-edit && git push origin --force-with-lease"
 _wrap grbi "git rebase upstream/master -i"
 _wrap gph "git push heroku master"
 _wrap gaa "git add -A"
@@ -32,11 +32,11 @@ _wrap hosts "sudoedit /etc/hosts && sudo /etc/init.d/dns-clean restart && sudo /
 _wrap amisafe "ps auxwww | grep sshd"
 _wrap empty-trash "rm -rf ~/.local/share/Trash/*"
 _wrap v "nvim"
- 
+
 ipp () {
   dig +short myip.opendns.com @resolver1.opendns.com
 }
- 
+
 ipl () {
   ifconfig | grep broadcast | awk '{print $2}'
 }
@@ -61,3 +61,8 @@ project() {
   git commit -m "init"
   code .
 }
+
+if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
+  source /opt/dev/dev.sh
+fi
+
