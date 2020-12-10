@@ -5,6 +5,10 @@ NODE_VER=14
 echo "this script is meant to be used on a debian-type os like Ubuntu"
 read -n 1 -p  "Press any key to continue"
 
+echo "updating system before installing dependencies"
+sudo apt update
+sudo apt upgrade -y
+
 # tools
 sudo apt install -y zsh neovim tmux net-tools curl htop g++ make
 
