@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR="$HOME/.cli-dev"
-NODE_VER=14
+NODE_VER=15
 
 echo "this script is meant to be used on a debian-type os like Ubuntu"
 read -n 1 -p  "Press any key to continue"
