@@ -33,6 +33,28 @@ _wrap amisafe "ps auxwww | grep sshd"
 _wrap empty-trash "rm -rf ~/.local/share/Trash/*"
 _wrap v "nvim"
 
+ghclone() {
+  CMD="cd ~/dev && git clone git@github.com:$1.git"
+  echo $CMD;
+  eval $CMD;
+}
+
+_tar() {
+  # x = extract
+  # v = verbose
+  # f = file
+  # z = zip
+  tar xvfz $1
+}
+
+_save_cli_to_github() {
+  cd ~/.cli-dev
+  git add -A .
+  git commit -m $1
+  git push
+  cd -
+}
+
 ipp () {
   dig +short myip.opendns.com @resolver1.opendns.com
 }

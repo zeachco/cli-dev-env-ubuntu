@@ -40,8 +40,8 @@ read -p "Full name for git config: " git_name
 
 git config --global --replace-all user.email $git_email
 git config --global --replace-all user.name $git_name
-git config --global --replace-all credential.helper cache
 
+git config --global --replace-all credential.helper cache
 git config --global --replace-all color.ui auto
 git config --global --replace-all alias.b "branch -a"
 git config --global --replace-all alias.aaa "add . --all && commit --amend --no-edit"
@@ -69,5 +69,6 @@ chmod +x "$DIR/profile.sh"
 echo "source $DIR/profile.sh" >> ~/.zprofile
 source "$DIR/profile.sh"
 
-ln -sf ~/.vim/plugins.vim ~/.cli-dev/plugins.vim
-ln -sf ~/.config/nvim/init.vim ~/.cli-dev/nvim.vim
+ln -sf ~/.cli-dev/plugins.vim ~/.vim/plugins.vim
+ln -sf ~/.cli-dev/nvim.vim ~/.config/nvim/init.vim
+sudo chsh -s $(which zsh)

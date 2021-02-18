@@ -1,1 +1,0 @@
-/home/olivier/.vim/plugins.vim

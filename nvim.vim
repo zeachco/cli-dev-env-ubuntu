@@ -1,1 +1,0 @@
-/Users/olivierr/.config/nvim/init.vim
