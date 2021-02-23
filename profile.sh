@@ -30,8 +30,13 @@ _wrap npmv "npm version $1 && git push --follow-tags && npm publish"
 _wrap gif "~/scripts/gif"
 _wrap hosts "sudoedit /etc/hosts && sudo /etc/init.d/dns-clean restart && sudo /etc/init.d/networking restart"
 _wrap amisafe "ps auxwww | grep sshd"
-_wrap empty-trash "rm -rf ~/.local/share/Trash/*"
 _wrap v "nvim"
+
+function empty-trash() {
+  TRASH_PATH="~/.local/share/Trash/*"
+  echo "cleaning $TRASH_PATH"
+  rm -rf "$TRASH_PATH"
+}
 
 ghclone() {
   CMD="cd ~/dev && git clone git@github.com:$1.git"
